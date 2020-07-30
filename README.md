@@ -1,5 +1,5 @@
-# multiplex
-Multiplex
+# Elevatika
+Elevatika
 
 ## Running the project
 

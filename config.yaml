@@ -24,8 +24,8 @@ enableEmoji: true
 pygmentsCodefences: true
 pygmentsCodefencesGuessSyntax: true
 pygmentsStyle: 'pygments'
-#disqusShortname: mikeck
-#googleAnalytics: UA-61460250-6
+# disqusShortname: mikeck
+googleAnalytics: UA-61460250-5
 permalinks:
   blog: /:title/
 taxonomies:
