@@ -4,7 +4,7 @@
       {{ $swiperCss := resources.Get "css/swiper.min.css" }}
       {{ $brandsCss := resources.Get "css/brands.min.css" }}
       {{ $fontawesomeCss := resources.Get "css/fontawesome.min.css" }}
-      {{ $mainCSS := (resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "nested" "precision" 10) ) }}
+      {{ $mainCSS := resources.Get "sass/main.scss"  }}
 
       {{ $cssBundle := slice $mainCSS $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/a.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
         
