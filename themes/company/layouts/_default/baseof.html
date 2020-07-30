@@ -6,7 +6,7 @@
       {{ $fontawesomeCss := resources.Get "css/fontawesome.min.css" }}
       {{ $mainCSS := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "nested" "precision" 10) }}
 
-      {{ $all := slice $mainCSS $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/join.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+      {{ $cssBundle := slice $mainCSS $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/a.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
         
         <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
         <meta charset="utf-8">
@@ -14,7 +14,7 @@
         <meta name="google" content="notranslate" />
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         
-        <link rel="stylesheet" href="{{ $all.Permalink }}">
+        <link rel="stylesheet" href="{{ $cssBundle.Permalink }}">
         {{/*  <link rel="stylesheet" href="{{ $mainCSS.Permalink }}">  */}}
         {{ if eq .Params.layout "post" }} 
         {{ if .Params.canonical_url }}
@@ -22,8 +22,7 @@
         {{ end }}
         {{ end }}
         {{ template "_internal/google_analytics_async.html" . }}
-        {{ partial "og.html" . }}
-        {{/*  {{ template "_internal/opengraph.html" . }}  */}}
+        {{ template "_internal/opengraph.html" . }}
         {{ template "_internal/twitter_cards.html" . }}
         
         {{ partial "meta.html" . }}
