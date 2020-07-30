@@ -4,9 +4,9 @@
       {{ $swiperCss := resources.Get "css/swiper.min.css" }}
       {{ $brandsCss := resources.Get "css/brands.min.css" }}
       {{ $fontawesomeCss := resources.Get "css/fontawesome.min.css" }}
-      {{ $mainCSS := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "nested" "precision" 10) }}
+      {{ $mainCSS := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS }}
 
-      {{ $cssBundle := slice $mainCSS $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/join.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+      {{ $cssBundle := slice $mainCSS $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/bundled.main.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
         
         <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
         <meta charset="utf-8">
