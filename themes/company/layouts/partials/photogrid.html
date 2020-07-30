@@ -1,0 +1,8 @@
+<div class="elev_grid_images">
+    {{ range .Site.Data.details.services_list }}  
+    <div class="elev_grid_image">
+        <img src="{{.image | relURL }}" alt="grid">
+        <p>{{.title}}</p>
+    </div>
+    {{ end }}
+</div>

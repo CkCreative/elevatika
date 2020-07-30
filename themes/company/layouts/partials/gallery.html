@@ -1,0 +1,19 @@
+{{ with .Resources.ByType "image" }}
+<div class="elev_photo_gallery">
+    {{ range . }}
+    <img src="/images/logo.svg" data-src="{{ (.Resize "720x q90").RelPermalink  }}" alt="{{ .RelPermalink }}">
+    {{ end }}
+</div>
+{{ end }}
+
+<script>
+    function init() {
+        var imgDefer = document.getElementsByTagName('img');
+        for (var i = 0; i < imgDefer.length; i++) {
+            if (imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
+            }
+        }
+    }
+    window.onload = init;
+</script>

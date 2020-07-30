@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #162447;
+    --secondary-color: #1f4068;
+    --accent-color: #e43f5a;
+    --dark-color: #1b1b2f;
+    --primary-font: Arial;
+    --line-spacing: 1.5;
+    --page-width: 1200px;
+    --menu-height: 64px;
+    --footer-height: 300px;
+    --large-button: 10px 15px;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: var(--menu-height) 1fr var(--footer-height);
+    grid-template-areas: "head head head head head head"
+                        "cont cont cont cont cont cont"
+                        "foot foot foot foot foot foot";
+}
+
+.menu-bar {
+    grid-area: head;
+    border-top: thick solid yellow;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "logo . . . menu menu";
+    background-image: linear-gradient(to right, var(--dark-color), var(--accent-color));
+}
+
+.menu {
+    grid-area: menu;
+    justify-self: end;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items li {
+    text-transform: uppercase;
+    padding: 0px 10px;
+    list-style: none;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-close {
+    display: none;
+}
+
+.content {
+    grid-area: cont;
+    background-image: url("/images/background_patterns.png");
+    background-size: cover;
+    height: 500px;
+    background-color: blue;
+    background-position: bottom;
+}
+
+.hero p {
+    font-size: 68px;
+    font-weight: bolder;
+    max-width: 50%;
+    color: white;
+    padding-left: 20px;
+}
+
+.features {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-evenly;
+}
+
+.card {
+    width: minmax(300px, 30%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: thin solid whitesmoke;
+}
+
+.card-divider {
+    border-top: 5px solid whitesmoke;
+    margin-right: 30px;
+    margin-left: 30px;
+    justify-self: center;
+    width: calc(100% - 60px);
+}
+
+ 
+@media only screen and (max-width: 600px) {
+    .menu-bar {
+        grid-area: head;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "logo . menu menu menu menu";
+    }
+
+    .menu {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        background-color: rgba(19, 17, 17, 0.7);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+    }
+    
+    .menu-items li {
+        line-height: 2;
+        background-color: var(--accent-color);
+        border-bottom: 1px solid var(--dark-color);
+        padding: 0px 70px;
+        text-align: center;
+    }
+    .menu-items li:last-child {
+        border-bottom: none;
+        border-radius: 0px 0px 0px 10px;
+        padding-bottom: 15px;
+    }
+    .menu-items li:first-child {
+        border-bottom: none;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        border-radius: 10px 0px 0px 0px;
+    }
+
+    .menu-close {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .menu-close button {
+        background-color: transparent;
+        border: none;
+        font-size: larger;
+    }
+
+    
+    .hero p {
+        font-size: 38px;
+        font-weight: bolder;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}

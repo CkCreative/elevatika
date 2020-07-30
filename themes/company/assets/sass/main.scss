@@ -1,0 +1,39 @@
+$font: (
+  primary: ("Fira Sans", sans-serif),
+  secondary: ("Fira Sans", serif)
+);
+
+// Palette.
+$palette: (
+  primary:       #5e5e5e,
+  secondary:     darken(#5e5e5e, 25%),
+  meta:          lighten(#5e5e5e, 25%),
+  border:        lighten(#5e5e5e, 50%),
+  bg:            lighten(#5e5e5e, 60%),
+  accent:        #3cb464,
+  accent-blue:   #108afb,
+  accent-black:  #323232,
+  accent-red:    #a51c30,
+  accent-orange:    #ff8800f5,
+  background:    #E5E5E5,
+);
+
+@import "imports/functions";
+
+@import "imports/reset";
+@import "imports/general";
+@import "imports/icons";
+@import "imports/structure";
+@import "imports/header";
+@import "imports/content";
+@import "imports/subscribe";
+@import "imports/footer";
+@import "imports/palettes";
+@import "imports/elev";
+@import "imports/hero";
+@import "imports/photogrid";
+@import "imports/contact";
+@import "imports/slider2";
+@import "imports/gallery";
+@import "imports/postlist";
+

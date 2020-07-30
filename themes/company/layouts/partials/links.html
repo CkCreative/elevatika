@@ -1,0 +1,14 @@
+<div class="elev_links">
+    <h2 class="elev_contact_heading">Links</h2>
+    <hr>
+    {{$here := .Permalink}}
+    {{ range where .Site.Pages "Section" "!=" "blog" }}
+    <a href="{{.Permalink}}">
+        {{ if not (eq $here .Permalink) }} 
+            {{ if not (in .Permalink "thank-you") }}
+            <span>{{.Title}}</span>
+            {{ end }}  
+        {{ end }}
+    </a>
+    {{ end }}
+</div>

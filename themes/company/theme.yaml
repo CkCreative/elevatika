@@ -1,0 +1,34 @@
+title: Company
+baseURL: /
+params:
+  title: Company
+  footer:
+    content: '&copy; Company &middot; All rights reserved &middot; '
+    has_social: true
+    links:
+      - new_window: true
+        text: Websites and Graphic Design
+        url: 'https://www.elevatika.com'
+      - new_window: true
+        text: My Work (Websites)
+        url: 'https://ck.elevatika.com'
+  header:
+    has_nav: true
+    logo_img: ''
+    title: MIKE CK
+  layout_style: grid
+  palette: blue
+  cover: /images/logo.png
+  description: >-
+      We provide Electrical Engineering and Information Communication Technology (ICT) services in Design, Construction(Installation), Commissioning, Procurement and Project Management in the Electrical High Voltage, Low voltage, Extra low voltage, Control and Automation sectors.
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm
+enableEmoji: true
+pygmentsCodefences: true
+pygmentsCodefencesGuessSyntax: true
+pygmentsStyle: 'pygments'
+#disqusShortname: mikeck
+#googleAnalytics: UA-61460250-6
+

@@ -1,0 +1,31 @@
+{{ define "content" }}
+
+<div class="elev_hero">
+  <div class="elev_text">
+    <h2><span></span>We build modern, beautiful and lightning-fast websites.</h2>
+    <p>
+      {{.Site.Data.details.services}}
+    </p>
+    <button onclick="window.location = '/about/'">Learn More</button>
+  </div>
+
+  {{partial "slider.html" .}}
+  
+</div>
+
+{{ partial "slider2.html" . }}
+
+<div class="elev_hero_two">
+  <div class="elev_text">
+    <h2><span></span>Over 6 Years of Experience</h2>
+    <p>
+      {{.Site.Data.details.bragging}}
+    </p>
+    <button onclick="window.location = '/about/'">Learn More</button>
+  </div>
+
+  {{partial "slider.html" .}}
+  
+</div>
+
+{{ end }}

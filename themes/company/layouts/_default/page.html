@@ -1,0 +1,23 @@
+{{ define "content" }}
+
+
+<div class="elev_hero_pages">
+  
+  {{partial "slider.html" .}}
+  <div class="elev_text">
+    <h2><span></span>{{.Params.Title}}</h2>
+    <p>
+      {{.Params.subtitle}}
+    </p>
+    <button onclick="window.location = '#contact_us'">Get in touch</button>
+  </div>
+
+</div>
+
+<div class="elev_content">
+  {{ .Content | safeHTML }}
+  <!-- {{ template "_internal/disqus.html" . }} -->
+</div><!-- .post-content -->
+
+
+{{ end }}

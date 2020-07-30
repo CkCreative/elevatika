@@ -1,0 +1,349 @@
+.elev_hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas: "image text" "image text";
+    background-image: url("/images/background_hero.svg");
+    background-size: cover;
+    padding: 3.5rem 0rem;
+    width: 80%;
+    margin: auto;
+    
+
+    @media only screen and (max-width: 768px) {
+        grid-template-areas: "image" "text";
+        width: 90%;
+    }
+
+    .elev_text {
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 58px;
+            @media only screen and (max-width: 600px) {
+                font-size: 42px;
+                margin-top: 50px;
+            }
+            @media only screen and (max-width: 768px) {
+                font-size: 48px;
+                margin-top: 50px;
+            }
+            span {
+                margin-right: 10px;
+                content: url(/images/gear_two.svg);
+                color: _palette(accent-red);
+                animation: gear 10s linear infinite;
+                display: inline-flex;
+                justify-content: center;
+                background-size: cover;
+                background-position: bottom right;
+                align-items: center;
+                height: 45px;
+            }
+        }
+
+        p {
+            font-size: x-large;
+            @media only screen and (max-width: 600px) {
+                font-size: large;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            align-items: center;
+            margin-left: 0;
+        }
+        @media only screen and (max-width: 768px) {
+        }
+
+        button {
+            align-self: start;
+        }
+    }
+
+
+    .elev_sliding_images {
+        grid-area: image;
+        height: 500px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: skew(2deg) rotate(-2deg);
+        overflow: hidden;
+        position: relative;
+        align-self: flex-end;
+        border-radius: 4px;
+        margin: auto;
+
+        .elev_swiper-slide {
+            position: absolute;
+            background-image: url(/images/2.jpeg);
+            transform: skew(-2deg) rotate(2deg);
+            height: 130%;
+            width: 130%;
+            left: -15%;
+            top: -15%;
+            background-position: center;
+        }
+        @media only screen and (max-width: 600px) {
+            padding-left: 0px;
+            height: 350px;
+            width: 100%;
+            // display: none;
+        }
+        
+    }
+}
+.elev_hero_two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas: "text image";
+    background-image: url("/images/background_hero.svg");
+    background-size: cover;
+    padding: 3.5rem 0rem;
+    width: 80%;
+    margin: auto;
+    
+    @media only screen and (max-width: 900px) {
+        width: 95%;
+    }
+    
+
+    @media only screen and (max-width: 768px) {
+        grid-template-areas: "image" "text";
+        width: 90%;
+    }
+
+
+    .elev_text {
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+
+        h2 {
+            font-size: 58px;
+            @media only screen and (max-width: 600px) {
+                font-size: 42px;
+                margin-top: 50px;
+            }
+            @media only screen and (max-width: 768px) {
+                font-size: 48px;
+                margin-top: 50px;
+            }
+            span {
+                margin-right: 10px;
+                content: url(/images/gear_two.svg);
+                color: _palette(accent-red);
+                animation: gear 4s linear infinite;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                height: 45px;
+            }
+        }
+
+        p {
+            font-size: x-large;
+            @media only screen and (max-width: 600px) {
+                font-size: large;
+            }
+        }
+
+        p,h2 {
+            text-align: right;
+        }
+        
+        button {
+            align-self: flex-end;
+        }
+
+        @media only screen and (max-width: 600px) {
+            align-items: center;
+            margin-right: 0;
+            margin-left: 0;
+            p,h2 {
+                text-align: left;
+            }
+            button {
+                align-self: flex-start;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            p,h2 {
+                text-align: left;
+            }
+            button {
+                align-self: flex-start;
+            }
+        }
+
+    }
+
+
+    .elev_sliding_images {
+        grid-area: image;
+        height: 500px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: skew(-2deg) rotate(2deg);
+        overflow: hidden;
+        position: relative;
+        align-self: flex-end;
+        border-radius: 4px;
+        margin: auto;
+
+        .elev_swiper-slide {
+            position: absolute;
+            background-image: url(/images/m1.jpeg);
+            transform: skew(2deg) rotate(-2deg);
+            height: 130%;
+            width: 130%;
+            left: -15%;
+            top: -15%;
+            background-size: cover;
+            background-position: bottom right;
+        }
+        @media only screen and (max-width: 600px) {
+            padding-left: 0px;
+            height: 350px;
+            width: 100%;
+        }
+    }
+}
+
+.elev_hero_pages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas: "text image";
+    background-image: url("/images/background_hero.svg");
+    background-size: cover;
+    padding: 3.5rem 0rem;
+    width: 80%;
+    margin: auto;
+    
+    @media only screen and (max-width: 900px) {
+        width: 95%;
+    }
+    
+
+    @media only screen and (max-width: 768px) {
+        grid-template-areas: "image" "text";
+        width: 90%;
+    }
+
+
+    .elev_text {
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+
+        h2 {
+            font-size: 58px;
+            @media only screen and (max-width: 600px) {
+                font-size: 42px;
+                margin-top: 50px;
+            }
+            @media only screen and (max-width: 768px) {
+                font-size: 48px;
+                margin-top: 50px;
+            }
+            span {
+                margin-right: 10px;
+                content: url(/images/gear_two.svg);
+                color: _palette(accent-red);
+                animation: gear 4s linear infinite;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                height: 45px;
+            }
+        }
+
+        p {
+            font-size: x-large;
+            @media only screen and (max-width: 600px) {
+                font-size: large;
+            }
+        }
+
+        p,h2 {
+            text-align: right;
+        }
+        
+        button {
+            align-self: flex-end;
+        }
+
+        @media only screen and (max-width: 600px) {
+            align-items: center;
+            margin-right: 0;
+            margin-left: 0;
+            p,h2 {
+                text-align: left;
+            }
+            button {
+                align-self: flex-start;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            p,h2 {
+                text-align: left;
+            }
+            button {
+                align-self: flex-start;
+            }
+        }
+
+    }
+
+
+    .elev_sliding_images {
+        grid-area: image;
+        height: 500px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: skew(-2deg) rotate(2deg);
+        overflow: hidden;
+        position: relative;
+        align-self: flex-end;
+        border-radius: 4px;
+        margin: auto;
+
+        .elev_swiper-slide {
+            position: absolute;
+            background-image: url(/images/2.jpeg);
+            transform: skew(2deg) rotate(-2deg);
+            height: 130%;
+            width: 130%;
+            left: -15%;
+            top: -15%;
+            background-position: center;
+        }
+        @media only screen and (max-width: 600px) {
+            padding-left: 0px;
+            height: 350px;
+            width: 100%;
+        }
+    }
+}
+
+
+@keyframes gear {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

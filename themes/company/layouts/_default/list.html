@@ -1,0 +1,41 @@
+{{ define "content" }}
+
+<div class="elev_post_container">
+    {{ $display_posts := .Pages.ByDate.Reverse }}
+    {{ range $post := $display_posts }}
+    <article class="elev_post_card">
+        <div class="elev_post_card_inside">
+            {{ if $post.Params.thumbnail }}
+            <a class="elev_card_media" href="{{ $post.Permalink }}">
+                <img class="thumbnail" src="{{ $post.Params.thumbnail | relURL }}" alt="{{ $post.Params.title }}" />
+            </a>
+            {{ end }}
+            <div class="elev_card_content">
+                <header class="post-header">
+                    {{ if $post.Params.date }}
+                    <div class="post-meta">
+                        <time class="published"
+                            datetime="{{ $post.Date | dateFormat "2006-01-02 15:04" }}">{{ $post.Date | dateFormat "January 02, 2006" }}</time>
+                        <span>🕑 {{.ReadingTime}} Min</span>
+                    </div>
+                    {{ end }}
+
+                    {{$howmany := countwords .Title }}
+
+                    <h2 class="post-title"><a href="{{ $post.Permalink }}" rel="bookmark">{{cond (gt (countwords .Title) 1) .Title (humanize .Title)  }}</a>
+                    </h2>
+
+                </header><!-- .post-header -->
+                <div class="post-excerpt">
+                    <p>{{ $post.Params.description }}</p>
+                    <p class="read-more">
+                        <a class="button inverse" href="{{ $post.Permalink }}">Read more</a>
+                    </p>
+                </div><!-- .post-excerpt -->
+            </div><!-- .post-card-content -->
+        </div><!-- .post-card-inside -->
+    </article><!-- .post -->
+    {{ end }}
+</div><!-- .post-feed -->
+
+{{ end }}

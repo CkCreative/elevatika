@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>    
+      {{ $swiperCss := resources.Get "css/swiper.min.css" }}
+      {{ $brandsCss := resources.Get "css/brands.min.css" }}
+      {{ $fontawesomeCss := resources.Get "css/fontawesome.min.css" }}
+      {{ $mainCSS := (resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "nested" "precision" 10) ) }}
+
+      {{ $cssBundle := slice $swiperCss $brandsCss $fontawesomeCss | resources.Concat "css/a.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+        
+        <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google" content="notranslate" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{{ $cssBundle.Permalink }}">
+        <link rel="stylesheet" href="{{ $mainCSS.Permalink }}">
+        {{ if eq .Params.layout "post" }} 
+        {{ if .Params.canonical_url }}
+        <link rel="canonical" href="{{ .Params.canonical_url }}"/>
+        {{ end }}
+        {{ end }}
+        <!-- {{ template "_internal/google_analytics_async.html" . }} -->
+        {{ template "_internal/opengraph.html" . }}
+        {{ template "_internal/twitter_cards.html" . }}
+        
+        {{ partial "meta.html" . }}
+
+        
+    </head>
+    <body>
+        
+        <div id="page" class="site layout-{{ .Site.Params.layout_style }} palette-{{ .Site.Params.palette }}">
+        
+            {{ partial "header.html" . }}
+        
+            <div id="content" class="site-content">
+              <main id="main" class="site-main inner">
+        
+                {{ block "content" . }}{{ end }}
+        
+              </main><!-- .site-main -->
+            </div><!-- .site-content -->
+        
+            {{ if .Site.Data.subscribe.enabled }}
+              {{ partial "subscribe.html" . }}
+            {{ end }}
+        
+            {{ partial "contact.html" . }}
+          
+            {{ partial "footer.html" . }}
+        
+          </div><!-- .site -->
+
+          {{ $plugins := resources.Get "js/plugins.js" }}
+          {{ $main := resources.Get "js/main.js" }}
+          {{ $slide := resources.Get "js/slide.js" }}
+
+          {{ $js := slice $plugins $main $slide | resources.Concat "js/bundle.js"}}
+        <!-- Scripts -->
+        <script src="{{ ($js |  resources.Minify | fingerprint).Permalink }}"></script>
+        <script>
+          const year = new Date().getFullYear().toString()
+          document.getElementById('year').innerText = year
+        </script>
+    </body> 
+</html>

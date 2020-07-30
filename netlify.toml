@@ -1,0 +1,9 @@
+[build]
+    command = "bash build.sh"
+
+    functions = "/functions"
+
+    publish = "public/"
+
+[build.environment]
+    HUGO_VERSION = "0.71.0"

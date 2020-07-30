@@ -1,0 +1,39 @@
+title: Elevatika Websites, Graphic Design and Branding
+baseURL: https://elevatika.com/
+params:
+  title: Elevatika Websites, Graphic Design and Branding
+  footer:
+    content: "&copy; <span id=\"year\"></span> Elevatika Websites, Graphic Design and Branding &middot; All rights reserved &middot;"
+    has_social: true
+    links:
+      - new_window: true
+        text: CK
+        url: 'https://mikeck.elevatika.com'
+  header:
+    has_nav: true
+    logo_img: '/images/logo.svg'
+    title: Elevatika, Websites and Graphic Design
+  layout_style: list
+  palette: blue
+  cover: images/2.jpg
+  description: >-
+    Elevatika is a modern digital services provider with great expertise in graphic design and website development. We make amazing websites using modern technologies and we also excel at branding. We think that you deserve the best value for your money.
+  images: 
+    - images/2.jpg
+enableEmoji: true
+pygmentsCodefences: true
+pygmentsCodefencesGuessSyntax: true
+pygmentsStyle: 'pygments'
+#disqusShortname: mikeck
+#googleAnalytics: UA-61460250-6
+permalinks:
+  blog: /:title/
+taxonomies:
+  category: categories
+outputs:
+  page:
+  - HTML
+  - AMP
+  - RSS
+
+theme: company

@@ -1,0 +1,17 @@
+{{ define "content" }}
+
+
+<div class="elev_hero_pages">
+  
+  {{partial "slider.html" .}}
+  <div class="elev_text">
+    <h2><span>&#x2699;</span>{{.Params.Title}}</h2>
+    <p>
+      {{.Site.Data.details.location }} | {{.Site.Data.details.email }} | {{.Site.Data.details.phone}}
+    </p>
+    <button onclick="window.location = '#contact_us'">Get in touch</button>
+  </div>
+
+</div>
+
+{{ end }}
