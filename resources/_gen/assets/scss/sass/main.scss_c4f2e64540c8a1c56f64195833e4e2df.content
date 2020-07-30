@@ -1549,6 +1549,7 @@ body {
       width: 130%;
       left: -15%;
       top: -15%;
+      background-size: cover;
       background-position: center; }
     @media only screen and (max-width: 600px) {
       .elev_hero .elev_sliding_images {
