@@ -1,8 +1,11 @@
 
   <div class="swiper2-container">
     <div class="swiper-wrapper">
-      {{ range .Site.Data.images.list }}
-      <img src="/images/logo.svg" class="swiper-slide" data-src="{{.}}">
+      {{ $gallery := .Site.GetPage "/gallery" }}
+      {{ with $gallery.Resources.ByType "image" }}
+      {{ range . }}
+      <img src="/images/logo.svg" class="swiper-slide" data-src="{{ (.Resize "400x q75").RelPermalink }}">
+      {{ end }}
       {{ end }}
      
     </div>

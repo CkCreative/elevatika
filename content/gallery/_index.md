@@ -8,7 +8,7 @@ menu:
     weight: 3
 layout: gallerypage
 resources:
-  - name: gallery
-    src: "**.png"
+  - name: image
+    src: "**.jpg"
 ---
 
