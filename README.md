@@ -1,4 +1,4 @@
-# Elevatika Main Website is Now Open Source
+# Elevatika's Main Website is Now Open Source
 
 > Haven't had time to clean the code yet. The theme is based on Stackbit's `Ampersand` theme.
 
