@@ -4,7 +4,7 @@
       {{ $gallery := .Site.GetPage "/gallery" }}
       {{ with $gallery.Resources.ByType "image" }}
       {{ range . }}
-      <img src="/images/logo.svg" class="swiper-slide" data-src="{{ (.Resize "400x q75").RelPermalink }}">
+      <img src="/images/logo.svg" class="swiper-slide" data-src="{{ (.Resize "400x q75").RelPermalink }}" alt="{{.Permalink}} Elevatika, Best Websites and Graphic Design in Kenya, USA, Canada, Europe and Australia">
       {{ end }}
       {{ end }}
      

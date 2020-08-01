@@ -1,7 +1,7 @@
 {{ with .Resources.ByType "image" }}
 <div class="elev_photo_gallery">
     {{ range . }}
-    <img src="/images/logo.svg" data-src="{{ (.Resize "720x q90").RelPermalink  }}" alt="{{ .RelPermalink }}">
+    <img src="/images/logo.svg" data-src="{{ (.Resize "720x q90").RelPermalink  }}" alt="{{ .Permalink }} Elevatika, Best Websites and Graphic Design in Kenya, USA, Canada, Europe and Australia">
     {{ end }}
 </div>
 {{ end }}
