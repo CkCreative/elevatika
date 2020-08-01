@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport({
 
 exports.handler = async function (event, context, callback) {
 
-    var {name, message, email, address} = querystring.parse(event.body)
+    var {name, message, email, love} = querystring.parse(event.body)
 
     var mailOptions = {
         from: `Elevatika Cloud <${process.env.ELEV_SENDER}>`,
@@ -28,7 +28,7 @@ exports.handler = async function (event, context, callback) {
     console.log(name,email,message)
     // context.succeed({statusCode: 302, location: event.headers.origin+"thank-you"});
 
-    if(!address) {
+    if(!love) {
         await transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
