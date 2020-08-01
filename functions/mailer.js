@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport({
 
 exports.handler = async function (event, context, callback) {
 
-    var {name, message, email} = querystring.parse(event.body)
+    var {name, message, email, address} = querystring.parse(event.body)
 
     var mailOptions = {
         from: `Elevatika Cloud <${process.env.ELEV_SENDER}>`,
@@ -28,22 +28,31 @@ exports.handler = async function (event, context, callback) {
     console.log(name,email,message)
     // context.succeed({statusCode: 302, location: event.headers.origin+"thank-you"});
 
-    await transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
+    if(!address) {
+        await transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+    
+        callback(null, {
+          statusCode: 200,
+          location: event.headers.referer + "thank-you",
+          body: `<b>Redirecting...</b> <br> Go <a href="/">Back</a> <script>
+            setTimeout(() => {
+                window.location = "${event.headers.origin}/thank-you"
+            }, 2000);
+          </script>`
+        });
+    } else {
+        callback(null, {
+            statusCode: 500,
+            body: `<h1>Internal Server Error!</h1>`
+          });
+    }
 
-    callback(null, {
-      statusCode: 200,
-      location: event.headers.referer + "thank-you",
-      body: `<b>Redirecting...</b> <br> Go <a href="/">Back</a> <script>
-        setTimeout(() => {
-            window.location = "${event.headers.origin}/thank-you"
-        }, 2000);
-      </script>`
-    });
+    
 
 }
