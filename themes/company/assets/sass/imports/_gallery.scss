@@ -1,20 +1,24 @@
 .elev_photo_gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 350px;
+    grid-auto-rows: minmax(350px, 1fr);;
     gap: 20px;
     background-color: white;
     padding: 20px;
 
     @media only screen and (max-width: 600px) {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-auto-rows: 250px;
-
+        grid-auto-rows: minmax(300px, 1fr);
     }
 
     img {
-        object-fit: cover;
+        object-fit: contain;
         height: 100%;
         width: 100%;
+        border: 2px solid _palette(border);
+        @media only screen and (max-width: 600px) {
+            object-fit: contain;
+            border: 2px solid _palette(border);
+        }
     }
 }
