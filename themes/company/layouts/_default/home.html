@@ -2,9 +2,9 @@
 
 <div class="elev_hero">
   <div class="elev_text">
-    <h2><span></span>We build modern, beautiful and lightning-fast websites.</h2>
+    <h2><span></span>{{.Site.Data.details.hero_one_header}}</h2>
     <p>
-      {{.Site.Data.details.services}}
+      {{.Site.Data.details.hero_one}}
     </p>
     <button onclick="window.location = '/about/'">Learn More</button>
   </div>
@@ -17,9 +17,9 @@
 
 <div class="elev_hero_two">
   <div class="elev_text">
-    <h2><span></span>Over 6 Years of Experience</h2>
+    <h2><span></span>{{.Site.Data.details.hero_two_header}}</h2>
     <p>
-      {{.Site.Data.details.bragging}}
+      {{.Site.Data.details.hero_two}}
     </p>
     <button onclick="window.location = '/about/'">Learn More</button>
   </div>
