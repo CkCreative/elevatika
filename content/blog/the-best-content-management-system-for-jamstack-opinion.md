@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
 date: 2020-08-08T00:47:24Z
-=======
-date: 2020-08-08T16:47:24Z
->>>>>>> 338a24332d2026c95b5854cf4256b95ffa66d1c1
 path: netlify-cms-vs-forestry
 thumbnail: "/assets/pexels-photo-2600494.jpeg"
 title: The Best Content Management System for JAMStack - Netlify CMS or Forestry?
