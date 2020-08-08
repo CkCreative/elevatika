@@ -58,4 +58,4 @@ I used this CMS for a very short period of time, loved it, but then went back to
 
 ## Conclusion
 
-I promised to update this post after sometime to share my experience. I have concluded that both are amazing products, and using them both in one project is easy to set up and works well. However, I now prefer Netlify CMS.
+I promised to update this post after sometime to share my experience. I have concluded that both are amazing products, and using them both in one project is easy to set up and works well. However, if I have to choose one, I prefer Netlify CMS.
