@@ -3,7 +3,7 @@ date: 2020-08-08T00:47:24Z
 thumbnail: "/assets/python.jpg"
 title: Is Python and Django Right for Your Business?
 description: >-
-    To Django or not? In this short article, I try to explain more about the benefits of Python to your business. It gives your business more than a fighting chance; a future.
+    To Django or not? In this short article, I try to highlight more on the benefits of Python to your business. It gives your business more than a fighting chance; a future.
 author: Mike CK
 categories:
   - Guides
