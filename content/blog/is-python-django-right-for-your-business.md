@@ -1,5 +1,5 @@
 ---
-date: 2020-08-08T00:47:24Z
+date: 2020-08-09T00:47:24Z
 thumbnail: "/assets/python.jpg"
 title: Is Python and Django Right for Your Business?
 description: >-
