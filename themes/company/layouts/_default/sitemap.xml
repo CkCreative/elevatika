@@ -4,7 +4,6 @@
 {{- if or (eq (isset .Params "private") false) (ne .Params.private true) }}
   <url>
     <loc>{{ .Permalink | absURL }}</loc>
-    <lastmod>{{ .Lastmod }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
