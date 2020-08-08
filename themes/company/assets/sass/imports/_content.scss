@@ -6,7 +6,8 @@
   padding: 1rem;
 }
 .post {
-  margin-bottom: 3.33333em;
+  color: _palette(post-color);
+  background-color: _palette(background-faint);
 }
 
 .post-header {

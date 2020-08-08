@@ -285,7 +285,7 @@ pre {
 
 blockquote {
   border-top: 3px solid #dedede;
-  color: #1e1e1e;
+  color: #5e5e5e;
   font-family: "Fira Sans", serif;
   font-size: 1.33333rem;
   line-height: 1.4;
@@ -779,7 +779,8 @@ img {
   padding: 1rem; }
 
 .post {
-  margin-bottom: 3.33333em; }
+  color: #5e5e5e;
+  background-color: #f7f5f5; }
 
 .post-header {
   margin-bottom: 2.5rem; }
