@@ -67,5 +67,5 @@ Also, the amount of data available is staggering. Each second, millions of messa
 
 ## Final Words
 
-Each time I think about Django, I think about data and databases. I couldn't just end this article without mentioning PostgreSQL. Combining PosgreSQL and Django will make your web applications secure, robust and fast to develop. Try that combination and let me know. 
+Each time I think about Django, I think about data and databases. I couldn't just end this article without mentioning PostgreSQL. Combining PosgreSQL and Django will make your web applications secure, robust and fast to develop. Try that combination and let me know.
 🚀 🚀 🚀 🚀
