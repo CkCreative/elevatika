@@ -9,7 +9,11 @@
     <button onclick="window.location = '/about/'">Learn More</button>
   </div>
 
-  {{partial "slider.html" .}}
+  <div class="elev_sliding_images">
+    <div class="elev_swiper-slide">
+      <img src="{{ .Site.Data.details.hero_one_image | absURL }}" alt="{{ .Site.Data.details.hero_one_header }}">
+    </div>
+  </div>
   
 </div>
 

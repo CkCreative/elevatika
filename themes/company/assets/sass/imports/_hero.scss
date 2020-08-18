@@ -5,7 +5,7 @@
     background-image: url("/images/background_hero.svg");
     background-size: cover;
     padding: 3.5rem 0rem;
-    width: 80%;
+    width: 90%;
     margin: auto;
     
 
@@ -66,12 +66,12 @@
 
     .elev_sliding_images {
         grid-area: image;
-        height: 500px;
+        //height: 500px;
         width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: skew(2deg) rotate(-2deg);
+        //transform: skew(2deg) rotate(-2deg);
         overflow: hidden;
         position: relative;
         align-self: flex-end;
@@ -79,19 +79,20 @@
         margin: auto;
 
         .elev_swiper-slide {
-            position: absolute;
-            background-image: url(/images/2.jpeg);
-            transform: skew(-2deg) rotate(2deg);
-            height: 130%;
-            width: 130%;
-            left: -15%;
-            top: -15%;
-            background-size: cover;
-            background-position: center;
+            //background-image: url(/images/2.jpeg);
+            //transform: skew(-2deg) rotate(2deg);
+            height: 100%;
+            width: 100%;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+
         }
         @media only screen and (max-width: 600px) {
             padding-left: 0px;
-            height: 350px;
+            //height: 350px;
             width: 100%;
             // display: none;
         }

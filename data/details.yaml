@@ -14,6 +14,9 @@ hero_two: >-
 hero_one_header: We build modern, beautiful and lightning-fast websites.
 hero_two_header: We will elevate your business
 
+hero_one_image: images/2.jpeg
+hero_two_image: images/m1.jpeg
+
 email: info@elevatika.com
 
 location: >-
