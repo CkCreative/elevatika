@@ -12,7 +12,7 @@
         {{ $cssBundle = $cssBundle | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
       {{ end }}
         
-        <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+        <title>{{ if .Title }}{{ .Title }} {{ end }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google" content="notranslate" />
