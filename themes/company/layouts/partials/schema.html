@@ -1,0 +1,43 @@
+<script type="application/ld+json">
+    { "@context" : "http://schema.org",
+      "@type" : "Organization",
+      "url" : "https://www.elevatika.com",
+      "email": "info(at)elevatika.com",
+      "name": "Elevatika Enterprises",
+      "telephone": "+254703423829",
+      "description": "Elevating business through fast and responsive websites, web applications and APIs, consulting, graphic design, logo design and other branding services.",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "sameAs": [
+            "https://www.facebook.com/elevatika",
+            "https://www.instagram.com/elevatika",
+            "https://twitter.com/elevatika",
+        ]
+     }
+     {{ if eq .Section "blog" }}
+    {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ .Title }},
+    "image": {{ .Params.thumbnail | absURL }},
+    "datePublished": {{ .Date }},
+    "dateModified": {{ .Lastmod }},
+    "author": {
+        "@type": "Person",
+        "name": {{ .Site.Params.author }}
+    },
+    "mainEntityOfPage": { "@type": "WebPage" },
+    "publisher": {
+        "@type": "Organization",
+        "name": {{ .Site.Params.title }},
+        "logo": {
+        "@type": "ImageObject",
+        "url": {{ .Site.Params.header.logo_img }}
+        }
+    },
+    "description": {{ .Params.description | safeHTML }},
+    "keywords": ["web development", "business", "logo design", "graphic design", "web designer", "website"]
+    }
+    {{ end }}
+    </script>
+
+    

@@ -2,6 +2,7 @@ title: Elevatika Websites, Graphic Design and Branding
 baseURL: https://elevatika.com/
 params:
   title: Elevatika Websites, Graphic Design and Branding
+  author: Mike CK
   footer:
     content: "&copy; <span id=\"year\"></span> Elevatika Websites, Graphic Design and Branding &middot; All rights reserved &middot;"
     has_social: true
@@ -36,4 +37,5 @@ outputs:
   - AMP
   - RSS
 enableRobotsTXT: true
+enableGitInfo: true
 theme: company
