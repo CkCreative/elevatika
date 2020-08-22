@@ -35,5 +35,5 @@ outputs:
   - HTML
   - AMP
   - RSS
-
+enableRobotsTXT: true
 theme: company
