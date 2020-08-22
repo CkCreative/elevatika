@@ -26,8 +26,9 @@
         {{ end }}
         <link rel="canonical" href="{{ .Permalink }}" />
         {{ template "_internal/google_analytics_async.html" . }}
-        {{ template "_internal/opengraph.html" . }}
-        {{ template "_internal/twitter_cards.html" . }}
+        {{ partial "og.html" . }}
+        {{ partial "tw.html" . }}
+        
         
         {{ partial "meta.html" . }}
         {{ partial "schema.html" . }}
