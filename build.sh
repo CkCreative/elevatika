@@ -2,7 +2,7 @@
 
 echo building site
 
-hugo --gc --minify
+hugo
 
 cd functions 
 

@@ -36,6 +36,6 @@ outputs:
   - HTML
   - AMP
   - RSS
-#enableRobotsTXT: true
+enableRobotsTXT: true
 enableGitInfo: true
 theme: company
