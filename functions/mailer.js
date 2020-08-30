@@ -27,8 +27,18 @@ exports.handler = async function (event, context, callback) {
 
     console.log(name,email,message)
     // context.succeed({statusCode: 302, location: event.headers.origin+"thank-you"});
+    const text = name + " " + email + " " + message
 
-    if(!love) {
+    const spam = () => {
+        return text.includes("http") || text.includes("nude") || text.includes("sex") || text.includes("fuck") || text.includes("porn") || love || !name || !message || !email
+    }
+
+    if(spam()) {
+        callback(null, {
+            statusCode: 500,
+            body: `<h1>Internal Server Error!</h1>`
+          });
+    } else {
         await transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
@@ -46,11 +56,7 @@ exports.handler = async function (event, context, callback) {
             }, 2000);
           </script>`
         });
-    } else {
-        callback(null, {
-            statusCode: 500,
-            body: `<h1>Internal Server Error!</h1>`
-          });
+        
     }
 
     
